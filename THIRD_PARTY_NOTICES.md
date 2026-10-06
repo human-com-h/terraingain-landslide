@@ -8,5 +8,5 @@ The [weight record](https://zenodo.org/records/7338613) identifies CC BY 4.0 for
 
 PyTorch, torchvision, NumPy, Matplotlib, and their dependencies are external software. Their own licenses apply. They are not vendored into this repository.
 
-The authors have not selected a distribution license for their own code and result records. No repository-wide license is granted by this candidate. Third-party terms remain applicable; a later choice for the authors' code cannot override them.
+The authors' original code and documentation use the MIT License. The SatMAE-derived files listed above remain subject to CC BY-NC 4.0; MIT does not override their upstream terms. Stored result tables and figures have separate, unresolved sharing permissions. See [LICENSE_SCOPE.md](LICENSE_SCOPE.md) for the boundaries of the MIT grant.
 

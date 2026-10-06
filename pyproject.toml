@@ -7,6 +7,7 @@ name = "terraingain-landslide"
 version = "0.1.0"
 description = "Paired pretraining and scratch comparisons for regional landslide segmentation"
 requires-python = ">=3.10"
+license = {text = "MIT for original code; CC-BY-NC-4.0 for SatMAE-derived components. See LICENSE_SCOPE.md."}
 authors = [
   {name = "Zida Hao", email = "20242501431@stu.xju.edu.cn"},
   {name = "Yubo Li"},
@@ -22,6 +23,9 @@ terraingain = "terraingain_landslide.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "LICENSE_SCOPE.md", "THIRD_PARTY_NOTICES.md", "licenses/SatMAE.txt"]
 
 [tool.setuptools.package-data]
 terraingain_landslide = ["CODE_MANIFEST.json"]

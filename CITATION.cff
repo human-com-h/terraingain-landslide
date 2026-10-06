@@ -3,6 +3,9 @@ message: "Please cite this software when using the implementation."
 type: software
 title: "TerrainGain Landslide"
 version: "0.1.0"
+license:
+  - MIT
+  - CC-BY-NC-4.0
 abstract: "Implementation and stored results for paired pretraining and scratch comparisons under regional holdout."
 authors:
   - family-names: Hao

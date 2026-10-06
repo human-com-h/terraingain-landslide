@@ -43,5 +43,7 @@ This local candidate was checked for syntax, package structure, configuration lo
 
 The implementation was relocated into a package, with path and import changes. It has a new software identity. Historical output hashes refer to the original implementation; this package must not silently resume those outputs. The available returns bind results to the declared frozen core, but do not independently authenticate every executed platform source version.
 
-This is a local candidate. The authors' code license, permissions for derived inputs and results, and a remote repository address remain to be settled. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for retained third-party terms and [AUTHORS.md](AUTHORS.md) for attribution.
+The authors' original code and documentation use the [MIT License](LICENSE). SatMAE-derived components retain CC BY-NC 4.0, including its noncommercial condition. See [LICENSE_SCOPE.md](LICENSE_SCOPE.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for scope and third-party terms.
+
+This is a local candidate. Permissions for derived inputs and stored results, and a remote repository address, remain to be settled. See [AUTHORS.md](AUTHORS.md) for attribution.
 
