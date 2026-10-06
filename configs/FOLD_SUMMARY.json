@@ -1,0 +1,52 @@
+[
+  {
+    "held_out": "dominicamaria",
+    "train": 774,
+    "inner_validation": 207,
+    "outer_test": 256,
+    "excluded": 43,
+    "positive_training_tiles": 332,
+    "negative_training_tiles": 442,
+    "positive_weight": 8.82593557066759
+  },
+  {
+    "held_out": "italy",
+    "train": 768,
+    "inner_validation": 212,
+    "outer_test": 256,
+    "excluded": 44,
+    "positive_training_tiles": 300,
+    "negative_training_tiles": 468,
+    "positive_weight": 8.613262896241835
+  },
+  {
+    "held_out": "hiroshima",
+    "train": 779,
+    "inner_validation": 204,
+    "outer_test": 256,
+    "excluded": 41,
+    "positive_training_tiles": 315,
+    "negative_training_tiles": 464,
+    "positive_weight": 8.247364684385309
+  },
+  {
+    "held_out": "hokkaido",
+    "train": 821,
+    "inner_validation": 184,
+    "outer_test": 256,
+    "excluded": 19,
+    "positive_training_tiles": 357,
+    "negative_training_tiles": 464,
+    "positive_weight": 10.598229622179396
+  },
+  {
+    "held_out": "thrissur",
+    "train": 770,
+    "inner_validation": 213,
+    "outer_test": 256,
+    "excluded": 41,
+    "positive_training_tiles": 296,
+    "negative_training_tiles": 474,
+    "positive_weight": 8.689683603867065
+  }
+]

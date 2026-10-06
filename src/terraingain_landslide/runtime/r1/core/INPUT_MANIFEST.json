@@ -1,0 +1,87 @@
+{
+  "scope": "five historical SOURCE regions only; no six-region target evaluations or sealed-event outputs",
+  "optical_arrays": {
+    "dominicamaria": {
+      "file": "source_optical/dominicamaria.npz",
+      "sha256": "0ee5aeac144ca6843c67572867db6bc77df9b6fd275b75c0a84085f8cd480d73",
+      "shape": [
+        256,
+        10,
+        128,
+        128
+      ],
+      "parent_sha256": "f38610df489caa72092f3cbd0dc75686fdbb80a0c5b335bf5117ed46416cbf9c",
+      "operation": "exact first ten channels; no scaling, resampling or relabeling"
+    },
+    "italy": {
+      "file": "source_optical/italy.npz",
+      "sha256": "7b9bc5d0b594c57329ecdfd8972bfb4c10b08c2ecf1646bc8fc279ada0abe2e3",
+      "shape": [
+        256,
+        10,
+        128,
+        128
+      ],
+      "parent_sha256": "4a8533f26527534e1c4861adbf5361f487eec2bc636dcc68120964965b057531",
+      "operation": "exact first ten channels; no scaling, resampling or relabeling"
+    },
+    "hiroshima": {
+      "file": "source_optical/hiroshima.npz",
+      "sha256": "ed199747247dfef04acea2b05a0ec0f0682f67d950e1cbb69d62063d8df980ee",
+      "shape": [
+        256,
+        10,
+        128,
+        128
+      ],
+      "parent_sha256": "b051fa3877196b1e53df48b779d29887ee81a3dae50b26f378d4454f0e4b8d47",
+      "operation": "exact first ten channels; no scaling, resampling or relabeling"
+    },
+    "hokkaido": {
+      "file": "source_optical/hokkaido.npz",
+      "sha256": "c75686d70442a7577d872694194f1a39dbc3055e4dfe88e4131c3c91ad4bf152",
+      "shape": [
+        256,
+        10,
+        128,
+        128
+      ],
+      "parent_sha256": "e65359722b8dd989ac06cd37d5370497adb4b0d757138f21e8dff883cb8edf16",
+      "operation": "exact first ten channels; no scaling, resampling or relabeling"
+    },
+    "thrissur": {
+      "file": "source_optical/thrissur.npz",
+      "sha256": "c721de33b6339f43806890a832eb0b688239fb28483cc243cee95c60d7a5e071",
+      "shape": [
+        256,
+        10,
+        128,
+        128
+      ],
+      "parent_sha256": "85123ff42ac29f8c1ae403e1b7c16099e90ef542d3bb499dd5a3e9ba0c17a9ce",
+      "operation": "exact first ten channels; no scaling, resampling or relabeling"
+    }
+  },
+  "metadata": {
+    "dominicamaria": {
+      "file": "source_optical/dominicamaria.json",
+      "sha256": "c7ae80fbe2afbc3118d8ecd38b6a3723a1df101a4453ef315e7862c17488bb1e"
+    },
+    "italy": {
+      "file": "source_optical/italy.json",
+      "sha256": "6872954c1efffe0492a3b0dd08bf002f872f1c8bf8f981357a11c62cef4305fe"
+    },
+    "hiroshima": {
+      "file": "source_optical/hiroshima.json",
+      "sha256": "997fca0bacf9909f0b2d93f43fd43926ade47de9b412c4edf9607bc479b8c9e3"
+    },
+    "hokkaido": {
+      "file": "source_optical/hokkaido.json",
+      "sha256": "a2d459412a496bb65680c12d35827fbc19fbaa214d44e802fb8a22a72a344867"
+    },
+    "thrissur": {
+      "file": "source_optical/thrissur.json",
+      "sha256": "79d80f67da05c9f93071827df5389b29072904e5791e43c266f95580b678944e"
+    }
+  }
+}

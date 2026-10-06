@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "shard": "dominicamaria",
+  "execution_seed": 17,
+  "identity": {},
+  "files": {
+    "dominicamaria/seed17/pretrained/config.json": {
+      "kind": "metadata",
+      "sha256": "fixture"
+    }
+  },
+  "complete": []
+}

@@ -1,0 +1,15 @@
+{
+  "candidates": [
+    "R0",
+    "R1"
+  ],
+  "checkpoint": 20000,
+  "score": "exact equal mean of four non-held regional F1",
+  "tie_break": "R0",
+  "zero_denominator_selection_score": 0,
+  "raw_undefined": null,
+  "freeze_before_R1_outer": true,
+  "nominal_per_arm_candidate_attempts": 40000,
+  "different_estimand_from_fixed_recipe": true,
+  "joint_LR_checkpoint_search": false
+}

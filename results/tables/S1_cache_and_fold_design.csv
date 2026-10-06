@@ -1,0 +1,6 @@
+region,tiles,positive_tiles,positive_pixels,occupied_blocks_5120m,original_inner_tiles,train_tiles,source_inner_tiles,excluded_source_tiles,train_positive_weight
+dominicamaria,256,80,42071,98,48,774,207,43,8.82593557066759
+italy,256,109,33801,214,43,768,212,44,8.613262896241835
+hiroshima,256,124,33299,102,51,779,204,41,8.247364684385309
+hokkaido,256,118,261743,76,71,821,184,19,10.598229622179396
+thrissur,256,121,39460,113,42,770,213,41,8.689683603867065

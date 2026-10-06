@@ -1,0 +1,9 @@
+{
+  "training_data": "../inputs/fold_training",
+  "outer_data": "../inputs/outer_data",
+  "encoder": "../inputs/satmae_base8_encoder.pt",
+  "previous_outputs": [],
+  "work": "../work/pair",
+  "export_dir": "../work/export",
+  "r0_reference": "../results/source_reference"
+}

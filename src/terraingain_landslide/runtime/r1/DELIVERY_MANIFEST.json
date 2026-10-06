@@ -1,0 +1,25 @@
+{
+  "files": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "core/assess_s05f.py": "5bb8ae2a4be3ccc0a95a8da2ffb4f7ab1942c92a1e5ab20c395f1f94457a1191",
+    "core/common_g1v2.py": "3a72790c710e96c865813bfeb1a983713ebd0444d7468c938f5dc61bfd6693b0",
+    "core/controlled.py": "471dba20f3c26e2134cfc05a3defa2c7c7af19d06715e77d65504096746e7f13",
+    "core/engineering_tests.py": "1afc99a2c598cbf696999ac165e6999753f975e74ccf766eaec435da2abb5869",
+    "core/EXPECTED_EXPOSURE_CHAINS.json": "b7be9b13b7f6db3b88de986f316cd56215740d9bbaca72a7de11c10b55520a0a",
+    "core/INPUT_MANIFEST.json": "228f0a5ed8d27d560e33c7d02a3d71f78717a591bbfa57abe63cb45d63ff35c8",
+    "core/MODEL_STRUCTURE.json": "54ca653f8664916e9c9b7ba0ed8fa453589be9701f889efc59caeb56e5a99d14",
+    "core/PACKAGE_MANIFEST.json": "350baa2cd6b9c4e7277da60fb37107dcff00067233c9cf11ab69bf64625487b5",
+    "core/S05G_FOLD_BINDINGS.json": "bb09262f9520fd3f5e525b0cc836d5ea570002ff346ff06822e17bcb0d764bd4",
+    "core/S05G_PROTOCOL.json": "cf8f27101fe09c096667a935112232ae5c198cc840d5a30f79ddcdbfa710bdc8",
+    "core/SOURCE_PACKS.json": "b36720938da4912b675d8ff9ba6b9ee68f886637889e3f118a3e89845678d411",
+    "core/train_s05f.py": "442394cdb8b791d081aeda401ab2b096283d239386e1459f890a32d81154e49d",
+    "launcher/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launcher/bounded_selection.py": "3b85f70fa8c5d4322b78cd8889343a97a044ed02870c77f1dcd0ac4022bb8f2d",
+    "launcher/budget_guard.py": "8068af469a0caf8c88483458b07aebb8c3018ec4ab6acb27d8c97b33244ca3dd",
+    "launcher/outer_runner.py": "b4ff13a8e66e03af208bab3d46cef16550bc696e1853ed963064a8344e1ba817",
+    "launcher/s05g_controls.py": "ab009a97b0a7cde27eec339292ea6cc8f319c061bb0f625812ced4bede37eda8",
+    "launcher/shard_runner.py": "aa8fabf50f5e74f4330bc466c953e26723e2d5c40d0bd757d883634e17b1315d",
+    "launcher/transport.py": "6283bf6073a3918ad4ea4b766df24af47a67b036327fa51c83e6bbd1a0d43b73"
+  }
+}

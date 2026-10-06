@@ -1,0 +1,286 @@
+{
+  "version": "S05G-ENCODER-LR-v1",
+  "scope": "historically developed five-source-region benchmark; current-fold supervised/fit/selection isolation; not independent new-event test",
+  "planned_runs": 30,
+  "regions": [
+    "dominicamaria",
+    "italy",
+    "hiroshima",
+    "hokkaido",
+    "thrissur"
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "arms": [
+    "pretrained",
+    "scratch"
+  ],
+  "outer_folds": 5,
+  "outer_test": "entire 256-tile held region cache",
+  "inner_split": "S05E frozen alternative spatial partition, restricted to four non-held regions",
+  "inner_split_sha256": "bf5bb0377c1ab6662918beaef9d54150b0135c2aa41ab95f99cd6f623d5be48a",
+  "recipe": {
+    "model": "SatMAE multispectral ViT-Base/8",
+    "bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B8A",
+      "B11",
+      "B12"
+    ],
+    "input_shape": [
+      10,
+      128,
+      128
+    ],
+    "policy": "quality",
+    "threshold": 0.5,
+    "batch": 8,
+    "microbatch": 2,
+    "gradient_accumulation": "four checkpointed microbatch forward graphs; single full-batch BCE+Dice backward, never average microbatch Dice",
+    "decoder": "unchanged 2304->128 GN8 GELU; upsample conv 128/64/32; 1 logit; identical seeded decoder per pair",
+    "initialization": {
+      "pretrained": "official frozen encoder initialization, all encoder parameters then trainable",
+      "scratch": "Linear trunc_normal std .02 bias0; LayerNorm weight1 bias0; patch Conv PyTorch default; cls_token trunc_normal .02; generated 12x12 512D sincos interpolated to16x16, generated 3x256 channel sincos, channel_cls zero",
+      "decoder_seed": "same seed and construction before encoder reinitialization; no extra random decoder init",
+      "only_arm_difference": "encoder initialization including deterministic positional initialization; all trainable tensors identical in shape"
+    },
+    "optimization": {
+      "optimizer": "AdamW",
+      "encoder_lr": 3.125e-05,
+      "decoder_lr": 0.001,
+      "weight_decay": 0.05,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "warmup_attempts": 3333,
+      "final_lr_ratio": 0.01,
+      "layer_decay": 1.0,
+      "drop_path": 0.0,
+      "gradient_clipping": null,
+      "weight_decay_exclusions": "bias, norm, cls, position and channel embeddings"
+    },
+    "amp": {
+      "dtype": "float16",
+      "initial_scale": 65536,
+      "growth_interval": 2000
+    },
+    "environment": {
+      "kaggle_torch": "2.10.0+cu128",
+      "kaggle_torchvision": "0.25.0+cu128",
+      "formal_gpu": "Tesla T4",
+      "pair_environment": "exact equality for torch/torchvision/numpy/cuda/cudnn/GPU across arms and resumed sessions"
+    },
+    "determinism": {
+      "torch_seed": "seed",
+      "numpy_seed": "seed",
+      "python_seed": "seed",
+      "cuda_seed": "seed",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "tf32": false,
+      "deterministic_algorithms": true,
+      "cublas_workspace_config": ":4096:8",
+      "scope": "same torch/numpy/CUDA/cuDNN/GPU class; no cross-hardware bitwise claim"
+    },
+    "loss": "weighted BCE + one global batch Dice smoothing1; sqrt(negative/positive) clipped1..20",
+    "sampling": "4 positive + 4 background with replacement; torch CPU generator seed+1000; same named source IDs order",
+    "augmentation": "batch-wide rot90 and horizontal flip; independent CPU generator seed+3000; no other augmentation",
+    "torch_num_threads": 2,
+    "normalization": "fold train IDs only; float64 moments over pixels, std floor0.0001; never reuse S05E five-region fit"
+  },
+  "attempts": 20000,
+  "primary_checkpoint": 20000,
+  "checkpoints": [
+    5000,
+    10000,
+    15000,
+    20000
+  ],
+  "inner_eval_interval": 500,
+  "recovery_interval": 250,
+  "model_selection": {
+    "primary": "fixed 20000",
+    "secondary": "inner_selected_checkpoint",
+    "candidate_steps": [
+      5000,
+      10000,
+      15000,
+      20000
+    ],
+    "score": "equal mean of four inner-region F1 from pooled pixel counts within each region",
+    "tie_break": "earliest step using exact rational F1 comparison",
+    "zero_denominator": "score zero for inner selection only; do not drop a region; raw undefined metric also stored as null",
+    "learning_rate_candidates": 1,
+    "threshold_candidates": [
+      0.5
+    ],
+    "additional_training_budget": 0,
+    "per_run_selection": true,
+    "selection_record_before_any_outer_inference": true
+  },
+  "fairness": {
+    "same_fold_fit": true,
+    "same_decoder_initialization": true,
+    "sampler_seed_offset": 1000,
+    "augmentation_seed_offset": 3000,
+    "batch_positive": 4,
+    "batch_negative": 4,
+    "training_ids_order_frozen": true,
+    "warmstart_from_S05E_forbidden": true,
+    "pretrained_initializer": "frozen official encoder only",
+    "cross_run_optimizer_or_rng_reuse": false
+  },
+  "outer_release": {
+    "require_all_30_runs_complete": true,
+    "require_120_checkpoints_hashed": true,
+    "require_all_30_selection_records_committed": true,
+    "inference_only_after_registry_freeze": true,
+    "outer_models_in_eval_mode": true,
+    "outer_adaptation": false
+  },
+  "primary_metric": "mean over 5 regions of mean over 3 paired seeds of regional F1(P)-regional F1(S), fixed 20k",
+  "secondary": [
+    "absolute_P_S_F1",
+    "IoU",
+    "precision",
+    "recall",
+    "FPR",
+    "FNR",
+    "predicted_positive_fraction",
+    "reference_positive_fraction",
+    "TP_FP_FN_TN",
+    "all_5_regions_all_3_seeds",
+    "5000_10000_15000_20000_outer_trajectory",
+    "inner_selected_checkpoint_outer_F1_and_gain",
+    "train_inner_validation_gap",
+    "successful_and_skipped_updates",
+    "wall_time"
+  ],
+  "uncertainty": {
+    "block_size_m": 5120,
+    "block_key": "region:floor(center_x/5120):floor(center_y/5120), in each region fixed projected CRS, origin zero",
+    "bootstrap": 2000,
+    "seed": 20260928,
+    "min_blocks_per_region": 20,
+    "min_valid_replicates": 1800,
+    "paired_weights_shared_across_arms_seeds_steps": true,
+    "draw": "B_r draws with replacement from the sorted occupied blocks of each region; all tiles of sampled blocks count with multiplicity",
+    "empty_positive_or_zero_f1_denominator": "mark whole paired macro replicate invalid; no redrawing or region removal",
+    "interval": "2.5/97.5 quantiles of jointly valid replicates; report validity count",
+    "scope": "conditional on fixed trained models, five regions, three seeds and observed caches; no refit/new-region/history uncertainty",
+    "block_order": "numeric lexicographic (block_x,block_y), region order as regions",
+    "rng": "numpy.random.Generator(numpy.random.PCG64(20260928))",
+    "draw_order": "replicate outer loop 0..1999; regions inner loop in protocol order; one integers(0,B_r,size=B_r) call per region; block weights via bincount",
+    "quantile_method": "numpy.quantile(method=\"linear\")",
+    "legal_missing_values": "undefined secondary metrics and unavailable CI are JSON null; invalid replicates are masked, never serialized as NaN"
+  },
+  "recipe_parent_protocol_sha256": "ab58c7ed0f569e2a3f191bb1006db8df769e1f10175b58e99d08af149ff814a9",
+  "formal_training_authorized": false,
+  "scientific_count_before": 637,
+  "parent": {
+    "S05F_protocol_sha256": "28ec9296ce17057a0f7f86651ce0bb767a582662d89513fd647ef5f447bd0cbf",
+    "S05F_final_freeze_sha256": "e22d563f445ed20eaccfec19aca86e7767a49f74eca607a188f3f7d21b128a95",
+    "S05F_registry_sha256": "1d7ade6a6371beaac450e4fe292d07d3754c8d48768d725d3d726fd63fff233a",
+    "S05F_infer_archive_sha256": "f6ce06100c0fa193374568708a38be766cccf52f284a295015850f4107a6f5fe",
+    "R0_SOURCE_20K_COUNTS_sha256": "baa7d838ecf5e654b692e768783f32e8f9b4a0cd61113a1ca5e8684186e04578",
+    "R0_environment_identity": {
+      "torch": "2.10.0+cu128",
+      "torchvision": "0.25.0+cu128",
+      "numpy": "2.0.2",
+      "cuda": "12.8",
+      "cudnn": 91002,
+      "gpu": "Tesla T4"
+    },
+    "S05E_decision": "D",
+    "S05F_decision": "F4",
+    "old_history_count": 637,
+    "old_main_matrix_runs": 30,
+    "old_main_matrix_pairs": 15
+  },
+  "extension_contrast": {
+    "R0_encoder_lr": 6.25e-06,
+    "R1_encoder_lr": 3.125e-05,
+    "scientific_recipe_difference_paths": [
+      "recipe.optimization.encoder_lr"
+    ],
+    "R0_read_only": true,
+    "already_seen_outer": true,
+    "prospective_blind_test": false,
+    "primary": [
+      "20k G(R1)",
+      "20k G(R1)-G(R0)"
+    ],
+    "posthoc_diagnostics": "All original matched IDs and original support complements; no causal coverage effect"
+  },
+  "bounded_recipe_selection": {
+    "candidates": [
+      "R0",
+      "R1"
+    ],
+    "checkpoint": 20000,
+    "score": "exact equal mean of four non-held regional F1",
+    "tie_break": "R0",
+    "zero_denominator_selection_score": 0,
+    "raw_undefined": null,
+    "freeze_before_R1_outer": true,
+    "nominal_per_arm_candidate_attempts": 40000,
+    "different_estimand_from_fixed_recipe": true,
+    "joint_LR_checkpoint_search": false
+  },
+  "execution": {
+    "hardware": "Kaggle T4x2",
+    "gpu0": "pretrained",
+    "gpu1": "scratch",
+    "internet": false,
+    "seeds_explicit_only": true,
+    "stage1": {
+      "seed": 17,
+      "runs": 10,
+      "source_engineering_gate_only": true
+    },
+    "stage2": {
+      "seeds": [
+        29,
+        43
+      ],
+      "runs": 20,
+      "requires_stage17_gate": true
+    },
+    "caps": {
+      "unique_new_runs": 30,
+      "single_T4_equivalent_hours": 160,
+      "pair_dual_T4_session_hours": 4.8,
+      "total_train_allocated_single_T4_hours": 144,
+      "outer_remaining_single_T4_hours": 16,
+      "export_reserve_seconds": 1800
+    },
+    "accounting": "Two allocated T4s count twice full wall time; preflight, I/O, restore, assessment and operator VM idle included",
+    "offline_global_lock_available": false,
+    "duplicate_runs_forbidden": true,
+    "automatic_budget_reallocation": false,
+    "resume_requires_unused_budget_allocation_and_previous_output": true,
+    "max_session_hours": 6
+  },
+  "stopping": {
+    "nonfinite": true,
+    "identity_or_environment_mismatch": true,
+    "max_20k_amp_skips": 200,
+    "insufficient_disk": true,
+    "failed_stage17_gate": true,
+    "run_cap_or_budget_cap": true,
+    "stop_on_negative_gain": false,
+    "no_automatic_new_recipe_retry": true,
+    "preserve_all_failures": true
+  }
+}

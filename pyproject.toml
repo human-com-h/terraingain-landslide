@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "terraingain-landslide"
+version = "0.1.0"
+description = "Paired pretraining and scratch comparisons for regional landslide segmentation"
+requires-python = ">=3.10"
+authors = [
+  {name = "Zida Hao", email = "20242501431@stu.xju.edu.cn"},
+  {name = "Yubo Li"},
+]
+dependencies = []
+
+[project.optional-dependencies]
+engineering = ["numpy>=1.26,<3"]
+display = ["matplotlib>=3.8"]
+
+[project.scripts]
+terraingain = "terraingain_landslide.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+terraingain_landslide = ["CODE_MANIFEST.json"]
+"terraingain_landslide.runtime.r0" = ["DELIVERY_MANIFEST.json"]
+"terraingain_landslide.runtime.r1" = ["DELIVERY_MANIFEST.json"]
+"terraingain_landslide.runtime.r0.core" = ["*.json"]
+"terraingain_landslide.runtime.r1.core" = ["*.json"]
+

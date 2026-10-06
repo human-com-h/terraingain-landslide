@@ -1,0 +1,27 @@
+{
+  "dominicamaria": {
+    "fold_sha256": "1ca468407edfe927b750c3d40fc2c70461892bfda2802d45ed307501b2779c73",
+    "fit_sha256": "3fea934bdf142a841e0092892e07b1da832769eb653f4e5309651ba3858dc8a4",
+    "data_manifest_sha256": "82835b6cfa164dcc2d17ee87bc06ea954e1e709a512a545fb6ddfdbe63cc655d"
+  },
+  "italy": {
+    "fold_sha256": "9745788c81ef9fa821a5f426a62692e65b5dd7b57b4462761fb620cfb40e4709",
+    "fit_sha256": "7a91716e1fb995ff84666c0a0b734881801a4259f2b652fdcb82adfd7867ed4c",
+    "data_manifest_sha256": "7a98f937000b34291e7db178987028fd71bab8c79592af348cd7507defa6a2b3"
+  },
+  "hiroshima": {
+    "fold_sha256": "654841674f9c4339ef2b9d21af031bc0bc749645fab47140a6c1a957f8c6d03b",
+    "fit_sha256": "3f30dfe84c6593bee5eb367f7d7e62d773e32d70fb573a3f74266ccd7d66269d",
+    "data_manifest_sha256": "03d872d7e3fee14da39ea994b01d464caaa00ff499f7cabc13282bc82eb2e8fe"
+  },
+  "hokkaido": {
+    "fold_sha256": "4c024f9e5c21bdf88cb3b6b415608c700a66f57bb398e89370a3b240ad641861",
+    "fit_sha256": "beb1c64c39d9771e4a6375a6cd78fd537d8b5e48d95a8a2cc4fb77c9a0977a04",
+    "data_manifest_sha256": "7249c496bffd306a8deacfd3953c5762498076c90ec12dd2ca69460c1b4b7420"
+  },
+  "thrissur": {
+    "fold_sha256": "7303a1315f9ae075e3d4d3e8d36f3c92567106d0e5e4db83fffa5e207c72a866",
+    "fit_sha256": "df750ea033d0b2213046a1fe09623486cf1c009b23bb1e59bbc1adf59ca48ac8",
+    "data_manifest_sha256": "87044ca5f8df477d2c7efd8da2abc1346f1586f674085400b6a9d86f13b30e0a"
+  }
+}

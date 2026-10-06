@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this software when using the implementation."
+type: software
+title: "TerrainGain Landslide"
+version: "0.1.0"
+abstract: "Implementation and stored results for paired pretraining and scratch comparisons under regional holdout."
+authors:
+  - family-names: Hao
+    given-names: Zida
+    affiliation: "School of Software, Xinjiang University, Urumqi, China"
+    orcid: "https://orcid.org/0009-0006-7718-2000"
+    email: "20242501431@stu.xju.edu.cn"
+  - family-names: Li
+    given-names: Yubo
+    affiliation: "School of Software, Xinjiang University, Urumqi, China"
+

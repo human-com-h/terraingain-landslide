@@ -1,0 +1,92 @@
+{
+  "input_order": [
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B8A",
+    "B11",
+    "B12"
+  ],
+  "official_original_13": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B8A",
+    "B09",
+    "B10",
+    "B11",
+    "B12"
+  ],
+  "official_dropped_zero_based": [
+    0,
+    9,
+    10
+  ],
+  "groups": [
+    {
+      "name": "RGB+NIR",
+      "indices": [
+        0,
+        1,
+        2,
+        6
+      ],
+      "bands": [
+        "B02",
+        "B03",
+        "B04",
+        "B08"
+      ]
+    },
+    {
+      "name": "Red Edge",
+      "indices": [
+        3,
+        4,
+        5,
+        7
+      ],
+      "bands": [
+        "B05",
+        "B06",
+        "B07",
+        "B8A"
+      ]
+    },
+    {
+      "name": "SWIR",
+      "indices": [
+        8,
+        9
+      ],
+      "bands": [
+        "B11",
+        "B12"
+      ]
+    }
+  ],
+  "spatial_input": [
+    128,
+    128
+  ],
+  "patch_size": 8,
+  "pretraining_grid": [
+    12,
+    12
+  ],
+  "adapted_grid": [
+    16,
+    16
+  ],
+  "position_interpolation": "bicubic align_corners=False; class token preserved; channel embeddings unchanged",
+  "input_resampling": false
+}

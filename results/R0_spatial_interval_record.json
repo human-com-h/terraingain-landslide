@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "block_size_m": 5120,
+  "bootstrap_replicates": 2000,
+  "rng": "numpy.random.Generator(PCG64(20260928))",
+  "draw_order": "replicate outer loop, protocol region inner loop; one integers(0,B_r,size=B_r) per region",
+  "block_sort": "numeric lexicographic (block_x,block_y) within each region",
+  "shared_weights": true,
+  "quantile_method": "linear",
+  "region_block_counts": {
+    "dominicamaria": 98,
+    "italy": 214,
+    "hiroshima": 102,
+    "hokkaido": 76,
+    "thrissur": 113
+  },
+  "weight_sha256": {
+    "dominicamaria": "5610a996ce2ddd93b85f36477653efc65d9df682ef67b61f861943f8717de4e6",
+    "italy": "12d579ae7b8528760b8cc01c8f2c8a6fbac1fc64ea47603b34a83e0e65b36e96",
+    "hiroshima": "f9e3b5e5c0af712247e738929fa3c7c516fc2048e6aac9e7e5d1ee545a821484",
+    "hokkaido": "35c515ca663d1508c34eb3a3bdbfb4161d7f1f4fb50d33601cb88ec730e664de",
+    "thrissur": "b46b547dcdbc26a509f20eb39273b3fa6d7e26b52713cb50976b5b2814b30a58"
+  },
+  "endpoint_summaries": {
+    "5000": {
+      "mean_gain": -0.04813625966526242,
+      "region_gains": [
+        -0.0017123427539259238,
+        -0.0656565596926265,
+        -0.18204247483767141,
+        -0.01777926836301774,
+        0.026509347320929504
+      ],
+      "seed_macro_gains": [
+        -0.04227423046407941,
+        -0.06220742138240108,
+        -0.03992712714930673
+      ],
+      "gain_ci95": [
+        -0.06954099706548207,
+        -0.021139359724338443
+      ],
+      "valid_replicates": 2000,
+      "absolute_macro_F1": {
+        "pretrained": 0.17700253037771702,
+        "scratch": 0.2251387900429794
+      }
+    },
+    "10000": {
+      "mean_gain": -0.06411092899632514,
+      "region_gains": [
+        0.026459432721852128,
+        -0.039836200713930896,
+        -0.21851286155916638,
+        -0.05880158411456258,
+        -0.029863431315817996
+      ],
+      "seed_macro_gains": [
+        -0.06060657743640754,
+        -0.0642102021121459,
+        -0.067516007440422
+      ],
+      "gain_ci95": [
+        -0.08545615244313877,
+        -0.036202432775561615
+      ],
+      "valid_replicates": 2000,
+      "absolute_macro_F1": {
+        "pretrained": 0.1429476676667702,
+        "scratch": 0.20705859666309534
+      }
+    },
+    "15000": {
+      "mean_gain": -0.038697052310630364,
+      "region_gains": [
+        0.025887440573091527,
+        -0.016214321080488158,
+        -0.13616197563157642,
+        -0.08172166316527328,
+        0.014725257751094503
+      ],
+      "seed_macro_gains": [
+        -0.033222270816929134,
+        -0.04462936867269694,
+        -0.03823951744226502
+      ],
+      "gain_ci95": [
+        -0.059227451722707485,
+        -0.011326890083730674
+      ],
+      "valid_replicates": 2000,
+      "absolute_macro_F1": {
+        "pretrained": 0.13665116683286463,
+        "scratch": 0.17534821914349497
+      }
+    },
+    "20000": {
+      "mean_gain": -0.03942359738195578,
+      "region_gains": [
+        0.025168872563245532,
+        -0.019607629975673665,
+        -0.1338292423623689,
+        -0.0855964140503982,
+        0.016746426915416324
+      ],
+      "seed_macro_gains": [
+        -0.022343106412553132,
+        -0.04311244492799002,
+        -0.05281524080532418
+      ],
+      "gain_ci95": [
+        -0.0599502331458279,
+        -0.011766944300689506
+      ],
+      "valid_replicates": 2000,
+      "absolute_macro_F1": {
+        "pretrained": 0.12399293764702186,
+        "scratch": 0.16341653502897763
+      }
+    },
+    "inner_selected": {
+      "mean_gain": -0.04847644421403484,
+      "region_gains": [
+        0.024142232792635016,
+        -0.05893421296651626,
+        -0.2019388283302854,
+        -0.04404423423307635,
+        0.038392821667068776
+      ],
+      "seed_macro_gains": [
+        -0.017888307987682473,
+        -0.06007583552472242,
+        -0.06746518912969963
+      ],
+      "gain_ci95": [
+        -0.07001949654211499,
+        -0.02054418731259402
+      ],
+      "valid_replicates": 2000,
+      "absolute_macro_F1": {
+        "pretrained": 0.1520879704374441,
+        "scratch": 0.20056441465147892
+      }
+    }
+  },
+  "legal_invalid_replica_handling": "mask entire paired five-region macro replicate; no redrawing or dropping region",
+  "scope": "conditional on fixed trained models, five regions, three seeds and observed caches; no refit/new-region/history uncertainty",
+  "local_numpy_version": "2.4.6"
+}

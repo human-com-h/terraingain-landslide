@@ -1,0 +1,58 @@
+{
+  "block_size_m": 5120,
+  "replicates": 2000,
+  "rng": "PCG64(20260928)",
+  "draw_order": "replicate outer loop, protocol region inner loop; integers(0,B,size=B)",
+  "weight_sha256": {
+    "dominicamaria": "5610a996ce2ddd93b85f36477653efc65d9df682ef67b61f861943f8717de4e6",
+    "italy": "12d579ae7b8528760b8cc01c8f2c8a6fbac1fc64ea47603b34a83e0e65b36e96",
+    "hiroshima": "f9e3b5e5c0af712247e738929fa3c7c516fc2048e6aac9e7e5d1ee545a821484",
+    "hokkaido": "35c515ca663d1508c34eb3a3bdbfb4161d7f1f4fb50d33601cb88ec730e664de",
+    "thrissur": "b46b547dcdbc26a509f20eb39273b3fa6d7e26b52713cb50976b5b2814b30a58"
+  },
+  "region_block_counts": {
+    "dominicamaria": 98,
+    "italy": 214,
+    "hiroshima": 102,
+    "hokkaido": 76,
+    "thrissur": 113
+  },
+  "joint_valid": 2000,
+  "invalid_indices": [],
+  "results": {
+    "G_R0": {
+      "ci95": [
+        -0.059950233145827904,
+        -0.011766944300689504
+      ],
+      "valid_joint": 2000,
+      "attempted": 2000
+    },
+    "G_R1": {
+      "ci95": [
+        -0.08092492211350405,
+        -0.045360222895941396
+      ],
+      "valid_joint": 2000,
+      "attempted": 2000
+    },
+    "delta_G_R1_minus_R0": {
+      "ci95": [
+        -0.043943652820120645,
+        -0.00996330637133191
+      ],
+      "valid_joint": 2000,
+      "attempted": 2000
+    },
+    "G_source_selected": {
+      "ci95": [
+        -0.07888263181258144,
+        -0.02992761498142474
+      ],
+      "valid_joint": 2000,
+      "attempted": 2000
+    }
+  },
+  "scope": "Conditional on the fixed five historical caches, models, and three seeds; no new-event or arbitrary-seed uncertainty. No redraw or region deletion.",
+  "local_numpy_version": "2.4.6"
+}

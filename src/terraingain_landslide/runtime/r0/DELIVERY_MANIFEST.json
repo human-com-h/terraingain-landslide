@@ -1,0 +1,21 @@
+{
+  "files": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "core/assess_s05f.py": "346379285918fcb661b75bea7dcfc4c7ae9c08312f82984371deb96b4493b914",
+    "core/common_g1v2.py": "22c457405a69064644c788d4dd90e124f7a4258d5af3198c346c34f7f1f49a97",
+    "core/controlled.py": "461536437aa1460b525c99745678ee079728b9afd6d47db01a83d9b8f6f9b0ed",
+    "core/engineering_tests.py": "1afc99a2c598cbf696999ac165e6999753f975e74ccf766eaec435da2abb5869",
+    "core/EXPECTED_EXPOSURE_CHAINS.json": "b7be9b13b7f6db3b88de986f316cd56215740d9bbaca72a7de11c10b55520a0a",
+    "core/INPUT_MANIFEST.json": "228f0a5ed8d27d560e33c7d02a3d71f78717a591bbfa57abe63cb45d63ff35c8",
+    "core/MODEL_STRUCTURE.json": "54ca653f8664916e9c9b7ba0ed8fa453589be9701f889efc59caeb56e5a99d14",
+    "core/PACKAGE_MANIFEST.json": "00b905c2267d46c088b559c57937f1eef5ae805b3c56f5baf427d866a002225a",
+    "core/S05F_PROTOCOL.json": "9add535517da9f62755421166a94b750d00507933e57a36660e2f1e234e2a382",
+    "core/SOURCE_PACKS.json": "b36720938da4912b675d8ff9ba6b9ee68f886637889e3f118a3e89845678d411",
+    "core/train_s05f.py": "898760c882f1976f1b4bd79e0532fcbdad5dee4128acd5f7aff997ba06ecdb3b",
+    "launcher/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launcher/outer_runner.py": "f98d3f1fed1b0380981347ee6ac2c2d8082997b82ff69b8a4cb48de7dbce1d4d",
+    "launcher/shard_runner.py": "2a9e5b390561521bc2b94819f347549b5a86f1fa1f47361b8af34e54788e0679",
+    "launcher/transport.py": "52e2ca927db2eb5b128845017dceadcf672a439bc8da1d78e153859e26a519d1"
+  }
+}

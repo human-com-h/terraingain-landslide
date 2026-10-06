@@ -1,0 +1,26 @@
+{
+  "held_out": "dominicamaria",
+  "training_regions": [
+    "italy",
+    "hiroshima",
+    "hokkaido",
+    "thrissur"
+  ],
+  "train_ids": [
+    "italy_fixture_train",
+    "hiroshima_fixture_train",
+    "hokkaido_fixture_train",
+    "thrissur_fixture_train"
+  ],
+  "inner_validation_ids": [
+    "italy_fixture_inner",
+    "hiroshima_fixture_inner",
+    "hokkaido_fixture_inner",
+    "thrissur_fixture_inner"
+  ],
+  "outer_test_ids": [
+    "dominicamaria_fixture_outer"
+  ],
+  "excluded_ids": [],
+  "training_ids_sha256": "18cd7a96ef7885d75a3fffc888ca8e356658b6173c6fb5aa70d58e5299301156"
+}

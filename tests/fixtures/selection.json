@@ -1,0 +1,60 @@
+{
+  "regions": [
+    "italy",
+    "hiroshima",
+    "hokkaido",
+    "thrissur"
+  ],
+  "r0": {
+    "italy": [
+      1,
+      1,
+      1,
+      5
+    ],
+    "hiroshima": [
+      1,
+      1,
+      1,
+      5
+    ],
+    "hokkaido": [
+      1,
+      1,
+      1,
+      5
+    ],
+    "thrissur": [
+      1,
+      1,
+      1,
+      5
+    ]
+  },
+  "r1": {
+    "italy": [
+      2,
+      2,
+      2,
+      10
+    ],
+    "hiroshima": [
+      2,
+      2,
+      2,
+      10
+    ],
+    "hokkaido": [
+      2,
+      2,
+      2,
+      10
+    ],
+    "thrissur": [
+      2,
+      2,
+      2,
+      10
+    ]
+  }
+}
