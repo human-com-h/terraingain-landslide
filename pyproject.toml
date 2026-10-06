@@ -14,6 +14,9 @@ authors = [
 ]
 dependencies = []
 
+[project.urls]
+Repository = "https://github.com/human-com-h/terraingain-landslide"
+
 [project.optional-dependencies]
 engineering = ["numpy>=1.26,<3"]
 display = ["matplotlib>=3.8"]

@@ -8,5 +8,7 @@ The [weight record](https://zenodo.org/records/7338613) identifies CC BY 4.0 for
 
 PyTorch, torchvision, NumPy, Matplotlib, and their dependencies are external software. Their own licenses apply. They are not vendored into this repository.
 
-The authors' original code and documentation use the MIT License. The SatMAE-derived files listed above remain subject to CC BY-NC 4.0; MIT does not override their upstream terms. Stored result tables and figures have separate, unresolved sharing permissions. See [LICENSE_SCOPE.md](LICENSE_SCOPE.md) for the boundaries of the MIT grant.
+The parent [Sen12Landslides dataset card](https://huggingface.co/datasets/paulhoehn/Sen12Landslides) declares CC BY 4.0. Its imagery, labels, and caches containing those materials retain the upstream attribution and licensing conditions. They are not included here.
+
+The authors' original code, documentation, and stored scalar results, tables, and figures use the MIT License. The SatMAE-derived files listed above remain subject to CC BY-NC 4.0; MIT does not override their upstream terms. See [LICENSE_SCOPE.md](LICENSE_SCOPE.md) for the boundaries of the MIT grant.
 

@@ -43,7 +43,11 @@ This local candidate was checked for syntax, package structure, configuration lo
 
 The implementation was relocated into a package, with path and import changes. It has a new software identity. Historical output hashes refer to the original implementation; this package must not silently resume those outputs. The available returns bind results to the declared frozen core, but do not independently authenticate every executed platform source version.
 
-The authors' original code and documentation use the [MIT License](LICENSE). SatMAE-derived components retain CC BY-NC 4.0, including its noncommercial condition. See [LICENSE_SCOPE.md](LICENSE_SCOPE.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for scope and third-party terms.
+The authors' original code, documentation, and stored scalar results, tables, and figures use the [MIT License](LICENSE). SatMAE-derived components retain CC BY-NC 4.0, including its noncommercial condition. See [LICENSE_SCOPE.md](LICENSE_SCOPE.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for scope and third-party terms.
 
-This is a local candidate. Permissions for derived inputs and stored results, and a remote repository address, remain to be settled. See [AUTHORS.md](AUTHORS.md) for attribution.
+The source repository is [human-com-h/terraingain-landslide](https://github.com/human-com-h/terraingain-landslide). Exact frozen data packages and the encoder subset remain external inputs. See [AUTHORS.md](AUTHORS.md) for attribution.
+
+## Citation
+
+If you use this code or its stored results, please cite this repository using the information in [CITATION.cff](CITATION.cff).
 

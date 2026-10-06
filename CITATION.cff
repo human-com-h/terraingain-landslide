@@ -1,8 +1,10 @@
 cff-version: 1.2.0
-message: "Please cite this software when using the implementation."
+message: "If you use this code or its stored results, please cite this repository."
 type: software
 title: "TerrainGain Landslide"
 version: "0.1.0"
+repository-code: "https://github.com/human-com-h/terraingain-landslide"
+url: "https://github.com/human-com-h/terraingain-landslide"
 license:
   - MIT
   - CC-BY-NC-4.0

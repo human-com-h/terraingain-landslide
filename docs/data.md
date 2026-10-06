@@ -14,5 +14,5 @@ The required encoder-only subset is `satmae_base8_encoder.pt`, SHA256 `a93bc2884
 
 The source-only R0 20k reference in `results/source_reference/` contains stored confusion counts and no outer scores. It supports the retained source selection code. Raw predictions and full training states remain external inputs.
 
-The parent data terms and permissions for derived caches, labels, weights, and result redistribution must be checked before distribution. This candidate does not assign a dataset license or create a download service.
+The parent dataset card declares CC BY 4.0. Frozen optical caches and labels derived from that dataset retain the upstream attribution and license conditions, with their preparation changes identified. The official checkpoint record also declares CC BY 4.0; the encoder subset retains those weight terms. These data and weight terms are separate from the MIT grant for the authors' own code and stored scalar results. Obtain the exact frozen packages and their manifests separately; this package does not download or redistribute them.
 
